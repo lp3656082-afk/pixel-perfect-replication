@@ -21,7 +21,7 @@ function Invite() {
   const { token } = Route.useParams();
   const navigate = useNavigate();
   useEffect(() => {
-    if (/^[a-f0-9]{48}$/.test(token)) sessionStorage.setItem(INVITE_KEY, token);
+    if (/^[a-f0-9]{48}$/.test(token)) localStorage.setItem(INVITE_KEY, token);
     navigate({ to: "/inicio" });
   }, [token, navigate]);
   return <Loading />;
